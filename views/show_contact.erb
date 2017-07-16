@@ -6,10 +6,30 @@
     <title></title>
   </head>
   <body>
-    <ul>
-      <li>Name: <%= @contact.full_name %> </li>
-      <li>Email: <%= @contact.email %>  </li>
-      <li> Notes: <%= @contact.note %></li>
-    </ul>
-  </body>
+
+
+    <div class="show_contact">
+      <ul>
+        <li>Name: <%= @contact.full_name %> </li>
+        <li>Email: <%= @contact.email %>  </li>
+        <li> Notes: <%= @contact.note %></li>
+      </ul>
+    </div>
+
+    <div class='delete_contact'>
+      <form action='/contacts/<%= @contact.id %>' method='post'>
+        <input type='hidden' name='_method' value='delete'>
+        <input type='submit' value='Delete Contact'>
+      </form>
+    </div>
+
+    <div class="link_to_edit">
+      <a href='/contacts/<%= @contact.id %>/edit'>Edit Contact</a>
+    </div>
+
+
+
+
+
+    </body>
 </html>
